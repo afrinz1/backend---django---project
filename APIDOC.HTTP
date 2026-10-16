@@ -1,0 +1,146 @@
+### Get all cakes
+GET http://127.0.0.1:8000/cake/
+# Authorization: Token a13669d50da91962980a6c19c22cf6e5c49a972c
+### Creating a cake
+
+POST http://127.0.0.1:8000/cake/
+# Authorization: Basic user user
+Content-Type: multipart/form-data; boundary=abcd
+
+--abcd
+Content-Disposition: form-data; name="name"
+
+Butterscotch Cake
+--abcd
+Content-Disposition: form-data; name="description"
+
+Sweety Yummy Rich in Nuts Cake
+--abcd
+Content-Disposition: form-data; name="category"
+
+1
+--abcd
+Content-Disposition: form-data; name="weight"
+
+1
+--abcd
+Content-Disposition: form-data; name="shape"
+
+1
+--abcd
+Content-Disposition: form-data; name="price"
+
+1250
+--abcd
+Content-Disposition: form-data; name="photo"; filename="vancho.webp"
+Content-Type: image/jpeg
+
+< C:\Users\Afrin\Documents\luminar python course\django\cake project\cake\media\cake-images\vancho.webp
+--abcd--
+
+
+### cake details api
+GET http://127.0.0.1:8000/cake/6/
+
+### cake update api
+PATCH http://127.0.0.1:8000/cake/5/
+Content-Type: multipart/form-data; boundary=abcd
+
+--abcd
+Content-Disposition: form-data; name="category"
+
+2
+--abcd--
+
+### cake details api
+DELETE http://127.0.0.1:8000/cake/6/
+
+
+### get auth token
+
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"afrin",
+    "password":"appuachu1234"
+}
+
+
+### GET Category api 
+GET http://127.0.0.1:8000/categories/
+
+### POST a category
+POST http://127.0.0.1:8000/categories/
+Content-Type: application/json
+
+{
+    "name":"special cake"
+}
+
+### retrive update delete
+GET http://127.0.0.1:8000/categories/1
+
+### update the cake
+PATCH http://127.0.0.1:8000/cake/5/
+Content-Type: application/json
+
+{
+    "name":"special cakes"
+}
+
+### delete record
+DELETE http://127.0.0.1:8000/cake/5/
+
+### GET Shape api 
+GET http://127.0.0.1:8000/shape/
+
+### POST shape api
+POST http://127.0.0.1:8000/shape/
+Content-Type: application/json
+
+{
+    "name":"triangle"
+}
+
+### Retrrieve update delete
+### GET Shape api 
+GET http://127.0.0.1:8000/shape/2
+
+### patch or update shape
+PATCH http://127.0.0.1:8000/shape/1
+Content-Type: application/json
+
+{
+    "name":"big traingle"
+}
+
+### deleting 
+DELETE http://127.0.0.1:8000/shape/3
+
+
+### for weighttt retirve and evrything else
+GET http://127.0.0.1:8000/weight/
+
+### POST shape api
+POST http://127.0.0.1:8000/weight/
+Content-Type: application/json
+
+{
+    "name":"4"
+}
+
+### Retrrieve update delete
+### GET Shape api 
+GET http://127.0.0.1:8000/weight/2
+
+### patch or update shape
+PATCH http://127.0.0.1:8000/weight/1
+Content-Type: application/json
+
+{
+    "name":"1kg"
+}
+
+### deleting 
+DELETE http://127.0.0.1:8000/weight/3
